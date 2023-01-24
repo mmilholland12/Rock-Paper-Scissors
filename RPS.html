@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+   
+    for (let round = 1; round <= 5; round++) {
+    let computerChoice = getComputerChoice();
+    let playerChoice = prompt("Choose rock, paper, or scissors for round " + round).toLowerCase();
+    let result = playRound(computerChoice, playerChoice);
+    console.log(result);
+    }
+    
+    //getcomputerChoice
+   function getComputerChoice() {
+    let choices = ["rock","paper","scissors"];
+    let randomIndex = Math.floor(Math.random() * 3);
+    return choices [randomIndex];
+   }
+
+   //Deciding the winner
+   function playRound(computerChoice, playerChoice) {
+    if (computerChoice === playerChoice) {
+      return "It's a tie"
+    }
+    else if (playerChoice === "rock" && computerChoice === "scissors") {
+      return "YOU WIN!. Rock beats scissors!";
+    }
+    else if (playerChoice === "scissors" && computerChoice === "paper") {
+      return "YOU WIN!. Scissors beats paper!";
+    }
+    else if (playerChoice === "paper" && computerChoice === "rock") {
+      return "YOU WIN!. Rock beats paper!";
+    }
+    else {
+      return "YOU LOSE! " + computerChoice + " beats " + playerChoice; 
+    }
+  }
+
+
+
+
+
+  </script>
+</body>
+</html>
